@@ -5,38 +5,27 @@ public class GreatestCommonDivisor
 
     public static int getGreatestCommonDivisor(int first, int second)
     {
+        int div = 1;
+        int GreatestComDiv =0 ;
 
-        if (first < 10 || second < 10)
-        {
-            return -1;
-        }
 
-        int greComDivFir = 0;
-        int greComDivSec = 0;
-        int x=0;
+       if(first < 10 || second < 10)
+       {
+           return -1;
+       }
 
-        while (x <=first)
-        {
-         greComDivFir = first % x;
-         if (greComDivFir == 0)
-         {
-             return greComDivFir;
-         }
-         x++;
-        }
+       while ((first%div < first)||(second%div<second))
+       {div++;
+           if ((first%div ==0 ) && (second%div ==0 )){
+            GreatestComDiv = div;
+           }
 
-        while (x <=second)
-        {
-            greComDivFir = second % x;
 
-            if (greComDivFir == 0)
-            {
-                return greComDivSec;
+
+       }
+
+
+        return GreatestComDiv;
             }
-            x++;
-        }
-
-return greComDivFir;
-    }
 
 }
